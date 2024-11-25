@@ -5,12 +5,10 @@
   <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url('{% static "assets/img/page-title-bg.webp" %}');">
       <div class="container position-relative">
         <h1>{{ category.name }}</h1>
-        <p>
-          Home / Blog / {{ category.name }}
-        </p>
+        
         <nav class="breadcrumbs">
           <ol>
             <li><a href="{% url 'home_view' %}">Home</a></li>
@@ -29,17 +27,15 @@
             <div class="col-lg-4">
               <article class="position-relative h-100">
                 <div class="post-img position-relative overflow-hidden">
-                  <img src="{% static 'assets/img/blog/blog-1.jpg' %}" class="img-fluid" alt="{{ post.title }}">
-                </div>
+                  {% if post.image %}
+                  <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}">
+                  {% endif %}
+                  </div>
                 <div class="meta d-flex align-items-end">
                   <span class="post-date">
                     <span>{{ post.published|date:"d" }}</span>{{ post.published|date:"F" }}
                   </span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i>
-                    <span class="ps-2">{{ post.author }}</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
+                
                   <div class="d-flex align-items-center">
                     <i class="bi bi-folder2"></i> 
                     <span class="ps-2">{{ category.name }}</span>
@@ -58,6 +54,28 @@
           {% else %}
             <p>No posts available for this category.</p>
           {% endif %}
+          
+
+
+          <!-- Search Widget Column -->
+          <div class="col-lg-4">
+            <!-- Search Widget -->
+            <div class="card mb-4 search-widget widget-item">
+              <div class="card-header">Search</div>
+              <div class="card-body">
+                <form action="{% url 'post_search' %}" method="get">
+                    <input class="form-control" type="text" name="query" maxlength="200" required id="id_query" placeholder="Enter search term..." >
+                    <button class="btn btn-success" type="submit" title="Search">
+                      <i class="bi bi-search"></i>
+                    </button>
+                </form>
+              </div>
+            </div><!-- End Search Widget -->
+          </div><!-- End Search Widget Column -->
+        
+
+
+
         </div>
       </div>
     </section><!-- /Blog Posts Section -->

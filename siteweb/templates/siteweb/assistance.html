@@ -2,6 +2,18 @@
 {% load static %}
 
 {% block content %}
+ <!-- Page Title -->
+ <div class="page-title dark-background" data-aos="fade" style="background-image: url('{% static "assets/img/page-title-bg.webp" %}');">
+    <div class="container position-relative">
+      <h1>Assistance</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="{% url 'home_view' %}">Home</a></li>
+          <li class="current">Assistance</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
 <section id="support" class="support-section py-5">
     <div class="container">
         <h2 class="text-center mb-4">Accompagnement et Support</h2>
@@ -11,9 +23,7 @@
             <div class="col-md-8">
                 <p>Nous offrons un accompagnement complet après-vente à nos clients, incluant formation, support technique et mises à jour logicielles. Notre équipe est dédiée à vous offrir une assistance personnalisée pour garantir le succès de votre projet.</p>
             </div>
-            <div class="col-md-4">
-                <img src="{% static 'assets/img/support-team.jpg' %}" alt="Support Team" class="img-fluid">
-            </div>
+            
         </div>
         
         <!-- Services Section -->
@@ -29,12 +39,12 @@
             
             <!-- Testimonials Section -->
             <div class="col-md-4">
-                <h3>Témoignages Clients</h3>
+                <h3>Besoin d'Aide ?</h3>
                 <blockquote>
-                    <p>"Le support technique de Bangri est exceptionnel ! Ils ont résolu notre problème rapidement et efficacement."</p>
-                    <footer>- Client Satisfait</footer>
+                    <p>Vous avez des questions ou rencontrez un problème avec nos services ? Notre équipe de support technique est disponible pour vous assister rapidement et efficacement.</p>
                 </blockquote>
             </div>
+            
             
             <!-- Chatbot Section -->
             <div class="col-md-4">
@@ -53,16 +63,7 @@
             </div>
         </div>
         
-        <!-- Video Tutorials -->
-        <div class="row mt-5">
-            <div class="col-md-6">
-                <h3>Vidéos Explicatives</h3>
-                <video controls width="100%">
-                    <source src="{% static 'assets/videos/tutorial.mp4' %}" type="video/mp4">
-                    Votre navigateur ne supporte pas la vidéo.
-                </video>
-            </div>
-        </div>
+        
     </div>
 </section>
 {% if user.is_authenticated %}
@@ -150,32 +151,6 @@
 {% else %}
 
                    
-<style>
-    #chatbot-container {
-        border: 1px solid #28b23f;
-        border-radius: 10px;
-        padding: 10px;
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-    }
-    #chatbot-messages {
-        flex-grow: 1;
-        overflow-y: auto;
-        margin-bottom: 10px;
-    }
-    #chatbot-input {
-        width: 70%;
-        padding: 5px;
-    }
-    #chatbot-nsend {
-        width: 68%;
-        padding: 5px;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-</style>
 
 
 

@@ -1,6 +1,104 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <style>
+        /* Reset de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 650px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-image: linear-gradient(135deg, #71c6f7, #abdf4c);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .header h1 {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #388e3c;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+        .footer p {
+            margin: 0;
+        }
+        .footer a {
+            color: #71c6f7;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 <body>
-    <h1>{{ subject }}</h1>
-    <p>{{ message }}</p>
+    <div class="container">
+        <!-- En-tête -->
+        <div class="header">
+            <img src="{{ logo_url }}" alt="Logo Bangri">
+            <h1>{{ subject }}</h1>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="content">
+            <p>{{ message }}</p>
+            <a href="{{ call_to_action_link }}" class="button">Découvrir plus</a>
+        </div>
+
+        <!-- Pied de page -->
+        <div class="footer">
+            <p>&copy;   Bangri. Tous droits réservés.</p>
+            <p>Vous recevez cet e-mail car vous êtes abonné à notre newsletter. <a href="{{ unsubscribe_link }}">Se désabonner</a></p>
+        </div>
+    </div>
 </body>
 </html>

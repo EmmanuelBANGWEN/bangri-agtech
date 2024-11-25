@@ -1,0 +1,66 @@
+{% extends 'siteweb/base.html' %}
+
+{% block content %}
+
+<section id="share-post" class="contact section">
+    {% if messages %}
+    <div class="alert alert-danger">
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    </div>
+  {% endif %}
+    <div class="container" data-aos="fade">
+
+        <div class="row gy-5 gx-lg-5">
+
+            <div class="col-lg-4">
+                <div class="info">
+                    <h3>Share This Post</h3>
+                    <p>Let your friends know about this great post by sending them an email.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <form method="post" action="{% url 'post_share' post.id %}">
+                    {% csrf_token %}
+                    <div class="container">
+                        {% if send %}
+                            <div class="alert alert-success" role="alert">
+                                <h4 class="alert-heading">E-mail Sent!</h4>
+                                <p>Your post <strong>{{ post.title }}</strong> has been sent to {{ form.cleaned_data.to }}.</p>
+                            </div>
+                        {% else %}
+                            <h1>Share <strong>{{ post.title }}</strong> via Email</h1>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required value="{{ user.username }}" placeholder="Your Name">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required value="{{ user.email }}" placeholder="Your Email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="to" class="form-label">Recipient's Email</label>
+                                <input type="email" class="form-control" name="to" id="to" required placeholder="Recipient's Email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Your message">{{ form.message.value }}</textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Share Post</button>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</section><!-- /Share Post Section -->
+{% endblock content %}

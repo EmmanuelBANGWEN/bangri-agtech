@@ -34,6 +34,7 @@ class Post(models.Model):
     published = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='posted',  )
+    image =models.ImageField(upload_to='post_images/', blank=True, null=True)
     objects = models.Manager() #default manager
     published_posts = PublishedManager() #custom manager
     tags = TaggableManager()
@@ -70,3 +71,26 @@ class Subscriber(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class Newsletter(models.Model):
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.subject
+
+
+
+class Ebook(models.Model):
+    titre = models.CharField(max_length=200)
+    auteur = models.CharField(max_length=100)
+    description = models.TextField()
+    prix = models.DecimalField(max_digits=6, decimal_places=2)
+    fichier = models.FileField(upload_to='ebooks/')
+    couverture = models.ImageField(upload_to='couvertures/', blank=True, null=True)
+    date_publication = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.titre

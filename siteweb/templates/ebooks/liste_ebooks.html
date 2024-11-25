@@ -1,0 +1,208 @@
+{% extends 'siteweb/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Ebooks</title>
+</head>
+
+<body>
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url('{% static "assets/img/page-title-bg.webp" %}');">
+        <div class="container position-relative">
+          <h1>Liste des Ebooks</h1>
+          <nav class="breadcrumbs">
+            <ol>
+              <!-- <li><a href="{% url 'home_view' %}">Home</a></li> -->
+              <li class="current">Découvrez notre collection exclusive d'eBooks à prix compétitifs !</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+    <!-- <h1 class="fashion_title">Liste des Ebooks</h1>
+    <p class="fashion_subtitle">Découvrez notre collection exclusive d'eBooks à prix compétitifs !</p> -->
+
+    <div class="container fashion_section_2">
+        <div class="row">
+            {% for ebook in ebooks %}
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    
+                    <div class="box_main">
+                        <h4 class="shirt_text">{{ ebook.titre }}</h4>
+                        <p class="price_text">Prix: <span>{{ ebook.prix }} FCFA</span></p>
+                        {% if ebook.couverture %}
+                            <div class="tshirt_img">
+                                <img src="{{ ebook.couverture.url }}" class="img-fluid" alt="Couverture de {{ ebook.titre }}" class="img-fluid rounded">
+                            </div>
+                        {% else %}
+                            <div class="tshirt_img">
+                                <img src="{% static 'default-image.png' %}" alt="Image non disponible" class="img-fluid rounded">
+                            </div>
+                        {% endif %}
+                        <div class="btn_main">
+                            <div class="buy_bt"><a href="{% url 'redirection_whatsapp' ebook.id %}">Acheter</a></div>
+
+                            <div class="seemore_bt"><a href="{% url 'detail_ebook' ebook.id %}">En savoir plus</a></div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+/* Carousel Styles */
+
+
+.fashion_title {
+    font-size: 40px;
+    color: #30302e;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.fashion_subtitle {
+    font-size: 18px;
+    color: #606060;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Section Styles */
+.fashion_section_2 {
+    margin-top: 30px;
+}
+
+/* Box Styles */
+.box_main {
+    background-color: #c6f6c9;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.box_main:hover {
+    transform: scale(1.05);
+}
+
+.shirt_text {
+    font-size: 20px;
+    color: #30302e;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Price Text */
+.price_text {
+    font-size: 16px;
+    color: #f26522;
+    margin-bottom: 15px;
+}
+
+.price_text span {
+    color: #262626;
+    font-weight: bold;
+}
+
+/* Ebook Image */
+.tshirt_img {
+    margin: 20px 0;
+    max-height: 250px; /* Optionnel : pour limiter la hauteur maximale de l'image */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.tshirt_img img {
+    width: auto; /* Permet à l'image de s'ajuster sans forcer une largeur spécifique */
+    height: 100%; /* L'image s'ajuste à la hauteur du conteneur sans être coupée */
+    border-radius: 8px;
+    object-fit: contain; /* Permet à l'image de conserver ses proportions sans être coupée */
+}
+
+/* Ebook Image */
+.tshirt_img {
+    margin: 30px 50px;
+    max-height: 350px;
+    overflow: hidden;
+}
+
+.tshirt_img img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Buttons */
+.btn_main {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.buy_bt a, .seemore_bt a {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.buy_bt a {
+    color: #f26522;
+    background-color: transparent;
+    border: 1px solid #f26522;
+}
+
+.buy_bt a:hover {
+    background-color: #f26522;
+    color: #ffffff;
+}
+
+.seemore_bt a {
+    color: #262626;
+    background-color: transparent;
+    border: 1px solid #262626;
+}
+
+.seemore_bt a:hover {
+    background-color: #262626;
+    color: #ffffff;
+}
+
+@media (min-width: 576px) and (max-width: 967px) {
+    .shirt_text {
+        font-size: 14px;
+    }
+    .price_text {
+        font-size: 14px
+    }
+    .buy_bt a {
+        font-size: 12px;
+    }
+    .seemore_bt a {
+        font-size: 12px;
+    }
+    .box_main {
+        padding: 20px 10px;
+    }
+
+    .tshirt_img {
+    margin: 30px 50px;
+    max-height: 350px;
+    overflow: hidden;
+}
+</style>
+
+{% endblock %}

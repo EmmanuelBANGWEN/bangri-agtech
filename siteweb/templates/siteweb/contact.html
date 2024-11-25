@@ -1,23 +1,21 @@
 {% extends 'siteweb/base.html' %}
-{% load static %}  <!-- N'oubliez pas de charger le tag static -->
+{% load static %}  
 {% block content %}
   <main class="main">
 
     <!-- Page Title avec l'image ouii.png -->
-    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url('{% static "assets/img/page-title-bg.webp" %}');">
       <div class="container position-relative">
-        <h1>Contact</h1>
-        <p>
-          Home / Contact
-        </p>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="{% url 'home_view' %}">Home</a></li>
-            <li class="current">Contact</li>
-          </ol>
-        </nav>
+          <h1>Contact</h1>
+          <nav class="breadcrumbs">
+              <ol>
+                  <li><a href="{% url 'home_view' %}">Home</a></li>
+                  <li class="current">Contact</li>
+              </ol>
+          </nav>
       </div>
-    </div><!-- End Page Title -->
+  </div>
+  <!-- End Page Title -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -29,14 +27,13 @@
           <div class="col-lg-4">
 
             <div class="info">
-              <h3>Get in touch</h3>
-              <p>Et id eius voluptates atque nihil voluptatem enim in tempore minima sit ad mollitia commodi minus.</p>
-
+              <h3>Contactez-nous</h3>
+              <p>N'hésitez pas à nous contacter pour plus d'informations sur nos services d'analyse de données, gestion de fermes, et plus encore.</p>
               <div class="info-item d-flex">
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
-                  <h4>Location:</h4>
-                  <p>Cameroun, Centre, Yaounde</p>
+                  <h4>Localisation:</h4>
+                  <p>Cameroun, Yaounde</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -44,8 +41,8 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h4>Email:</h4>
-                  <p>info@bangri.com</p>
-                  <p>bikoyemmanuel531@gmail.com</p>
+                  <p>contact@bangri.com</p>
+                  <!-- <p>bikoyemmanuel531@gmail.com</p> -->
                 </div>
               </div><!-- End Info Item -->
 
@@ -53,7 +50,7 @@
                 <i class="bi bi-phone flex-shrink-0"></i>
                 <div>
                   <h4>Call:</h4>
-                  <p>+237 655 37 27 03</p>
+                  <p>+237 655 372 703</p>
                 </div>
               </div><!-- End Info Item -->
 

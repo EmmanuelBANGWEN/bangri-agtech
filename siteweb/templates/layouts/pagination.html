@@ -6,11 +6,9 @@
                 <a class="page-link btn-success" href="?page={{page.previous_page_number}}" tabindex="-1" aria-disabled="true">Previous</a>
             </li>
         {% endif %}
-
         <li class="page-item active" aria-current="page">
             <a class="page-link btn-success" href="?page={{page.number}}">{{page.number}}</a>
         </li>
-        
         {% if page.paginator.num_pages != page.number %}
             <li class="page-item">
                 <a class="page-link btn-success">of</a>
@@ -27,3 +25,14 @@
         {% endif %}
     </ul>
 </nav>
+<style>
+    .pagination .page-link {
+    background-color: #0b4f16;
+    color: white; /* Si tu veux que le texte soit en blanc */
+    border-color: #0b4f16; /* Pour le contour des liens */
+}
+.pagination .page-item.active .page-link {
+    background-color: #0b4f16; /* Couleur pour l'élément actif */
+    color: white; /* Couleur du texte pour l'élément actif */
+}
+</style>

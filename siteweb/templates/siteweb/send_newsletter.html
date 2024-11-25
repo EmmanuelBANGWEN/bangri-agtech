@@ -1,12 +1,165 @@
-<form method="post">
-    {% csrf_token %}
-    <div>
-        <label for="subject">Sujet :</label>
-        <input type="text" id="subject" name="subject" required>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Bangri - Leading AgTech Solutions</title>
+  <meta name="description" content="Bangri - Innovative AgTech Solutions for Modern Agriculture">
+  <meta name="keywords" content="AgTech, Agriculture, Technology, Data Analysis, Software Development, Consulting, Marketing">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/monicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/monicon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+  
+</head>
+<body class="index-page">
+
+  <!-- <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"> -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+    
+      <a href="{% url 'home_view' %}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="{% static 'assets/img/monlogo.png' %}" alt="Bangri Logo">
+        <!-- <h1 class="sitename">AgriCulture</h1>  -->
+      </a>
+      
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'home_view' %}" class="active">Home</a></li>
+          
+          <li><a href="{% url 'blog_view' %}">Blog</a></li>
+          <li class="dropdown"><a><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'contact_view' %}">Contact</a></li>
+              <li class="dropdown"><a><span>Our Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="{% url 'developpement_logiciel' %}">Développement logiciel</a></li>
+                  <li><a href="{% url 'analyse_de_données' %}">Analyse de données</a></li>
+                  <li><a href="{% url 'consultation' %}">Consultation</a></li>
+                  <li><a href="{% url 'marketing_digital' %}">Marketing digital</a></li>
+                </ul>
+              </li>
+              <li><a href="{% url 'assistance' %}">Assistance</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'faq_view' %}">FAQ</a></li>
+          {% if user.is_authenticated %}
+          <li class="nav-item"><a class="nav-link" href=" {%url 'logout_view'%} ">Logout</a></li>
+          {% else %}
+          <li class="nav-item"><a class="nav-link" href=" {%url 'register_view'%} ">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href=" {%url 'login_view'%} ">Login</a></li>
+
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      {% endif %}
+</div>  
+  </header>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-weight: 600;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-label {
+            font-weight: 500;
+            color: #555;
+        }
+        .btn-primary {
+            background-color: #00ff51;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .form-control {
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        .footer-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+        
+</body>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Créer et Envoyer une Newsletter</h2>
+        <form method="post" class="mt-4">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="subject" class="form-label">Sujet :</label>
+                <input type="text" class="form-control" id="subject" name="subject" placeholder="Sujet de la newsletter" required>
+            </div>
+            <div class="mb-4">
+                <label for="message" class="form-label">Message :</label>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Contenu de la newsletter" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Envoyer la Newsletter</button>
+        </form>
+        <div class="footer-text">
+            <p>Assurez-vous de relire avant l'envoi !</p>
+        </div>
     </div>
-    <div>
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" required></textarea>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+<footer class="footer bg-dark text-light py-4">
+    <div class="container text-center">
+        <p>&copy;   Bangri. Tous droits réservés.</p>
+        <p>Conçu par <a href="www.linkedin.com/in/emmanuel-bangwen-75091117b" class="text-light">EmmanuelBangwen</a></p>
     </div>
-    <button type="submit">Envoyer</button>
-</form>
+</footer>
+</html>

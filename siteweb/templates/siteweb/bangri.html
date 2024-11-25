@@ -1,0 +1,498 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Bangri - Leading AgTech Solutions</title>
+  <meta name="description" content="Bangri - Innovative AgTech Solutions for Modern Agriculture">
+  <meta name="keywords" content="AgTech, Agriculture, Technology, Data Analysis, Software Development, Consulting, Marketing">
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/loggg.png' %}" rel="icon">
+  <link href="{% static 'assets/img/loggg.png' %}" rel="apple-touch-icon">
+  <!-- Fonts -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <!-- Main CSS File -->
+  <!-- <link href="{% static 'assets/css/main.css' %}" rel="stylesheet"> -->
+</head>
+  <!-- Custom Styles -->
+  <style>
+    .bangri-page {
+      background-color: #2E8B57;
+      color: #fff;
+    }
+
+    .rounded-image {
+      border-radius: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .btn-custom {
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+    .img-profile {
+      width: 40px;
+      height: 40px;
+      margin-left: 8px;
+    }
+    .img-profile img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+
+
+  }
+    .logo {
+      width: 10px;
+      height: 10px;
+      margin-left: 2px;
+    }
+    .logo img {
+      width: 25%;
+      height: 15%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    padding: 18px 15px;
+    font-size: 16px;
+    font-family: var(--nav-font);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+
+  .navmenu li:last-child a {
+    padding-right: 0;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+
+  .navmenu .dropdown ul {
+    margin: 0;
+    padding: 10px 0;
+    background: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 14px;
+    top: 130%;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 4px;
+    z-index: 99;
+    box-shadow: 0px 0px 30px color-mix(in srgb, var(--default-color), transparent 85%);
+  }
+
+  .navmenu .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    color: var(--nav-dropdown-color);
+  }
+
+  .navmenu .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover>a {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: -90%;
+    visibility: hidden;
+  }
+
+  .navmenu .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: -100%;
+    visibility: visible;
+  }
+}
+
+
+
+
+
+
+
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
+
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: var(--nav-mobile-background-color);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+    box-shadow: 0px 0px 30px color-mix(in srgb, var(--default-color), transparent 90%);
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: 10px 20px;
+    font-family: var(--nav-font);
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  }
+
+  .navmenu a i:hover,
+  .navmenu a:focus i:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+  }
+
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .active i,
+  .navmenu .active:focus i {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotate(180deg);
+  }
+
+  .navmenu .dropdown ul {
+    position: static;
+    display: none;
+    z-index: 99;
+    padding: 10px 0;
+    margin: 10px 20px;
+    background-color: var(--nav-dropdown-background-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    box-shadow: none;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navmenu .dropdown ul ul {
+    background-color: rgba(33, 37, 41, 0.1);
+  }
+
+  .navmenu .dropdown>.dropdown-active {
+    display: block;
+    background-color: rgba(33, 37, 41, 0.03);
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    top: 15px;
+    right: 15px;
+    margin-right: 0;
+    z-index: 9999;
+  }
+
+
+
+
+
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(33, 37, 41, 0.8);
+    transition: 0.3s;
+  }
+
+  .mobile-nav-active .navmenu>ul {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+    .dropdown-menu li {
+      list-style: none;
+    }
+    .navmenu ul {
+      list-style: none;
+      padding: 0;
+    }
+    .mobile-nav-toggle {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="bangri-page">
+ 
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center ">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+  <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+    <!-- Uncomment the line below if you also wish to use an image logo -->
+    <div class="logo">
+      <img src="{% static 'assets/img/monlogo.png' %}" alt="Bangri Logo">
+    </div>
+    <!-- <h1 class="sitename">AgriCulture</h1>  -->
+  </a>
+  <nav id="navmenu" class="navmenu">
+    <ul>
+      <li><a href="{% url 'home_view' %}">Home</a></li>
+      <li><a href="{% url 'services_view' %}">Our Services</a></li>
+      <li><a href="{% url 'blog_view' %}" >Blog</a></li>
+      <li class="dropdown"><a><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        <ul>
+          <li><a href="{% url 'contact_view' %}">Contact</a></li>
+          <li class="dropdown"><a><span>Our Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'developpement_logiciel' %}">Développement logiciel</a></li>
+              <li><a href="{% url 'analyse_de_données' %}">Analyse de données</a></li>
+              <li><a href="{% url 'consultation' %}">Consultation</a></li>
+              <li><a href="{% url 'marketing_digital' %}">Marketing digital</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'assistance' %}">Assistance</a></li>
+        </ul>
+      </li>
+      <li><a href="{% url 'liste_ebooks' %}">E-book</a></li>
+
+      <li><a href="{% url 'faq_view' %}">FAQ</a></li>
+
+      {% if is_administrateur %}
+        <li><a href="{% url 'mon_dashboard' %}" target="_blank">Tableau de bord</a></li>
+      {% endif %}
+      <li class="nav-item dropdown no-arrow">
+        <a class="nav-link d-flex align-items-center" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <!-- Nom d'utilisateur -->
+            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user.username }}</span>
+            <!-- Image de profil -->
+            <div class="img-profile">
+                <img src="{% static 'assets/img/undraw_profile.svg' %}" alt="Profile">
+            </div>
+            <i class="bi bi-chevron-down toggle-dropdown"></i>
+        </a>
+            <ul>
+                {% if user.is_authenticated %}
+                <li><a  href="{% url 'profile_view' %}">Profile</a></li>
+                
+                <li class="nav-item"><a class="nav-link" href=" {%url 'logout_view'%} ">Logout</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href=" {%url 'register_view'%} ">Register</a></li>
+                <li class="nav-item"><a class="nav-link" href=" {%url 'login_view'%} ">Login</a></li>
+                {% endif %}
+                              </ul>
+        </div>
+    </li>
+    <!-- CSS pour le style -->
+    <style>
+        .img-profile {
+            width: 40px; /* Ajustez la taille selon vos besoins */
+            height: 40px;
+            margin-left: 8px; /* Espace entre le texte et l'image */
+        }
+    
+        .img-profile img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    
+        
+    </style>
+    </ul>
+    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+  </nav>
+</div>
+</header>
+
+  <!-- Main Section -->
+  <section class="custom-section text-center">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <!-- Images -->
+        <div class="col-md-5">
+          <img src="{% static 'assets/img/hr.png' %}" alt="AgTech Illustration" class="img-fluid rounded-image">
+        </div>
+      </div>
+      <!-- Call to Action -->
+      <div class="mt-4">
+        <h1 class="fw-bold">Your Trusted AgTech Partner With <span class="text-danger"> Bangri</span></h1>
+        <p class="lead">Empowering modern agriculture with data-driven insights and innovative technology solutions.</p>
+        <div class="mt-4">
+          <a href="{% url 'contact_view' %}" class="btn btn-success btn-custom">Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+
+
+
+  <script>
+
+/**
+ * Mobile nav toggle
+ */
+const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+
+function mobileNavToogle() {
+  document.querySelector('body').classList.toggle('mobile-nav-active');
+  mobileNavToggleBtn.classList.toggle('bi-list');
+  mobileNavToggleBtn.classList.toggle('bi-x');
+}
+mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+
+/**
+ * Hide mobile nav on same-page/hash links
+ */
+document.querySelectorAll('#navmenu a').forEach(navmenu => {
+  navmenu.addEventListener('click', () => {
+    if (document.querySelector('.mobile-nav-active')) {
+      mobileNavToogle();
+    }
+  });
+
+});
+
+/**
+ * Toggle mobile nav dropdowns
+ */
+document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+  navmenu.addEventListener('click', function(e) {
+    e.preventDefault();
+    this.parentNode.classList.toggle('active');
+    this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+    e.stopImmediatePropagation();
+  });
+});
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

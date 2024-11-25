@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Comment, Subscriber
+from .models import Post, Newsletter , Category, Comment, Subscriber, Ebook
 from .views import send_newsletter
 
 # Gestion du modèle Post
@@ -32,7 +32,12 @@ class NewsletterAdmin(admin.ModelAdmin):
     actions = [send_newsletter_action]
 
 # Si vous avez un modèle "Newsletter", vous devez l'enregistrer ici
-# admin.site.register(Newsletter, NewsletterAdmin)
+admin.site.register(Newsletter, NewsletterAdmin)
 
 # Si vous avez un modèle "Newsletter", vous devez l'enregistrer ici
-admin.site.register(Subscriber)
+# admin.site.register(Subscriber)
+
+
+
+
+admin.site.register(Ebook)

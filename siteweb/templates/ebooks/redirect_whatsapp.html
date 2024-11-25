@@ -1,0 +1,52 @@
+{% extends 'siteweb/base.html' %}
+
+{% block content %}
+<div class="container fashion_section_2">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="box_main">
+                <h2 class="shirt_text">Merci pour votre intérêt !</h2>
+
+                
+                <h1 class="shirt_text">{{ ebook.titre }}</h1>
+                    <p class="price_text">Prix : <span>{{ ebook.prix }} FCFA</span></p>
+                    <p><strong>Auteur :</strong> {{ ebook.auteur }}</p>
+                    <p><strong>Description :</strong> {{ ebook.description }}</p>
+
+                <p class="price_text">Cliquez sur le lien ci-dessous pour finaliser votre achat via WhatsApp :</p>
+                <!-- <a href="https://wa.me/655372703?text=Bonjour, je suis intéressé par l'achat de l'ebook {{ ebook.titre }}."
+                   target="_blank" class="btn btn-primary">Continuer vers WhatsApp</a> -->
+                   <a href="https://wa.me/655372703?text=Bonjour, je suis intéressé par l'achat de l'ebook : {{ ebook.titre }}.%0APrix : {{ ebook.prix }} XAF.%0ADescription : {{ ebook.description|escapejs }}"
+                   target="_blank" class="btn btn-primary">Continuer vers WhatsApp</a>
+                   
+                
+                   <p class="mt-3"><a href="{% url 'liste_ebooks' %}">Retour à la liste des ebooks</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .box_main {
+        background-color: #c6f6c9;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+    }
+    .btn-primary {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #f26522;
+        border: 1px solid #f26522;
+        transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+        background-color: #e14a00;
+    }
+</style>
+{% endblock %}

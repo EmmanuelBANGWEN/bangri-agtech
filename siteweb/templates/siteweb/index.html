@@ -1,6 +1,5 @@
 {% extends 'siteweb/base.html' %}
 {% load static %}
-
 {% block content %}
   <main class="main">
     {% if messages %}
@@ -11,67 +10,60 @@
     </div>
   {% endif %}
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
-        <div class="carousel-item active">
-          <img src="{% static 'assets/img/hero_1.jpg' %}" alt="">
-          <div class="carousel-container">
-            <h2>Farming is the best solution of worlds starvation</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </div><!-- End Carousel Item -->
-
-        <div class="carousel-item">
-          <img src="{% static 'assets/img/hero_2.jpg' %}" alt="">
-          <div class="carousel-container">
-            <h2>Organic vegetables is good for health</h2>
-            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
-          </div>
-        </div><!-- End Carousel Item -->
-
-        <div class="carousel-item">
-          <img src="{% static 'assets/img/hero_3.jpg' %}" alt="">
-          <div class="carousel-container">
-            <h2>Providing Fresh Produce Every Single Day</h2>
-            <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-          </div>
-        </div><!-- End Carousel Item -->
-
-        <div class="carousel-item">
-          <img src="{% static 'assets/img/hero_4.jpg' %}" alt="">
-          <div class="carousel-container">
-            <h2>Farming as a Passione</h2>
-            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius.</p>
-          </div>
-        </div><!-- End Carousel Item -->
-
-        <div class="carousel-item">
-          <img src="{% static 'assets/img/hero_5.jpg' %}" alt="">
-          <div class="carousel-container">
-            <h2>Good Food For All</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </div><!-- End Carousel Item -->
-
-        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
-        <ol class="carousel-indicators"></ol>
-
+<section id="hero" class="hero section dark-background">
+  <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-item active">
+      <img src="{% static 'assets/img/hero_11.jpg' %}" alt="">
+      <div class="carousel-container">
+        <h2>Une solution durable pour nourrir le monde</h2>
+        <p>Découvrez comment nous utilisons les données pour améliorer la production agricole et répondre aux besoins alimentaires mondiaux.</p>
       </div>
+    </div><!-- End Carousel Item -->
 
-    </section><!-- /Hero Section -->
+    <div class="carousel-item">
+      <img src="{% static 'assets/img/hero_22.jpg' %}" alt="">
+      <div class="carousel-container">
+        <h2>Des cultures durables pour une santé optimale</h2>
+        <p>Nous encourageons les pratiques agricoles durables pour produire des aliments plus sains et préserver notre planète.</p>
+      </div>
+    </div><!-- End Carousel Item -->
+
+    <div class="carousel-item">
+      <img src="{% static 'assets/img/hero_33.jpg' %}" alt="">
+      <div class="carousel-container">
+        <h2>Des produits frais et de qualité, chaque jour</h2>
+        <p>Grâce à l’innovation, nous garantissons des récoltes optimales pour une alimentation plus fraîche et accessible.</p>
+      </div>
+    </div><!-- End Carousel Item -->
+
+    <div class="carousel-item">
+      <img src="{% static 'assets/img/hero_44.jpg' %}" alt="">
+      <div class="carousel-container">
+        <h2>La passion de l’agriculture à votre service</h2>
+        <p>Notre expertise se nourrit d'une passion pour la terre et d'un engagement pour un avenir agricole résilient.</p>
+      </div>
+    </div><!-- End Carousel Item -->
+
+    <div class="carousel-item">
+      <img src="{% static 'assets/img/hero_55.jpg' %}" alt="">
+      <div class="carousel-container">
+        <h2>Pour un avenir où chacun mange à sa faim</h2>
+        <p>Nous travaillons pour un système alimentaire plus équitable et durable, où chaque bouchée compte.</p>
+      </div>
+    </div><!-- End Carousel Item -->
+
+    <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+    <ol class="carousel-indicators"></ol>
+  </div>
+</section><!-- /Hero Section -->
 
  <!-- Services Section -->
  <section id="services" class="services section">
-
   <style>
     .service-box {
         text-align: center;
@@ -81,48 +73,39 @@
         transition: background-color 0.3s ease, transform 0.3s ease;
         cursor: pointer;
     }
-    
     .service-box:hover, .service-box.active {
         background-color: #32a852;
         color: white;
         transform: scale(1.05);
     }
-    
     .service-box h4 {
         margin-top: 10px;
         font-size: 18px;
         font-weight: bold;
     }
-    
     .icon {
         font-size: 48px;
         color: #32a852;
     }
-    
     .service-box:hover .icon, .service-box.active .icon {
         color: white;
     }
-    
     .service-box img {
         width: 100px;
         height: auto;
         margin-bottom: 10px;
         transition: transform 0.3s ease;
     }
-    
     .service-box:hover img, .service-box.active img {
         transform: scale(1.1);
     }
-    
     .service-box p {
         text-align: center;
         margin-top: 5px;
     }
-
     .tab-content {
         display: none;
     }
-
     .tab-content.active {
         display: block;
     }
@@ -134,41 +117,58 @@
         <h2>SERVICES</h2>
         <p>Providing Fresh Produce Every Single Day</p>
     </div>
-
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="row">
+          <style>
+            /* Styles existants */
+          
+            /* Grille 2x2 pour mobile */
+            @media (max-width: 768px) {
+                .col-lg-4 .row {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr; /* 2 colonnes */
+                    gap: 10px; /* Espacement entre les éléments */
+                }
+                .service-box {
+                    text-align: center;
+                    padding: 10px;
+                    border: 1px solid #ddd; /* Optionnel : ajoute une bordure autour des boîtes */
+                }
+                .service-box img {
+                    width: 100%; /* Ajuste l'image pour qu'elle occupe tout l'espace */
+                    height: auto; /* Maintient le ratio */
+                }
+            }
+          </style>
+          
+          <div class="col-lg-4">
+              <div class="row">
                   <div class="col-lg-6 col-md-6 mb-4">
-                    <div class="service-box" data-target="tab_2">
-                        <img src="https://www.dilepix.com/hubfs/20231108_pictos_services_dev.png" alt="Développer">
-                        <p>Développer</p>
+                      <div class="service-box" data-target="tab_2">
+                          <img src="https://www.dilepix.com/hubfs/20231108_pictos_services_dev.png" alt="Développer">
+                          <p>Développer</p>
                       </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 mb-4">
+                  </div>
+                  <div class="col-lg-6 col-md-6 mb-4">
                       <div class="service-box" data-target="tab_3">
                           <img src="https://www.dilepix.com/hubfs/20231108_pictos_services_cloud.png" alt="Analyser">
                           <p>Analyser</p>
                       </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 mb-4">
-                        <div class="service-box" data-target="tab_1">
-                            <img src="https://www.dilepix.com/hubfs/20231108_pictos_services_consulting.png" alt="Conseiller">
-                            <p>Consultation</p>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="col-lg-6 col-md-6 mb-4">
-                        <div class="service-box" data-target="tab_4">
-                            <img src="https://www.dilepix.com/hubfs/20231108_pictos_services_support.png" alt="Maintenir">
-                            <p>Marketing</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+                  </div>
+                  <div class="col-lg-6 col-md-6 mb-4">
+                      <div class="service-box" data-target="tab_1">
+                          <img src="https://www.dilepix.com/hubfs/20231108_pictos_services_consulting.png" alt="Conseiller">
+                          <p>Consultation</p>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 mb-4">
+                      <div class="service-box" data-target="tab_4">
+                          <img src="https://www.dilepix.com/hubfs/20231108_pictos_services_support.png" alt="Maintenir">
+                          <p>Marketing</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
             <div class="col-lg-8">
                 <div id="tab_1" class="tab-content">
                     <h3>Consultation et Conseil</h3>
@@ -180,7 +180,6 @@
                         <li>Stratégie d'innovation</li>
                         <li>Transformation digitale</li>
                     </ul>
-                    <img src="https://www.dilepix.com/hubfs/conseil_ia.jpeg" alt="conseil_ia" class="img-fluid">
                 </div>
                 <div id="tab_2" class="tab-content">
                     <h3>Développement logiciel</h3>
@@ -191,7 +190,6 @@
                         <li>Développement sur mesure</li>
                         <li>Certification des performances</li>
                     </ul>
-                    <img src="https://www.dilepix.com/hubfs/dev_ia.jpeg" alt="dev_ia" class="img-fluid">
                 </div>
                 <div id="tab_3" class="tab-content">
                     <h3>Gestion des données</h3>
@@ -202,7 +200,6 @@
                         <li>Stockage des données</li>
                         <li>Sécurité des données</li>
                     </ul>
-                    <img src="https://www.dilepix.com/hubfs/cloud_ia.jpeg" alt="cloud_ia" class="img-fluid">
                 </div>
                 <div id="tab_4" class="tab-content">
                     <h3>Marketing digital</h3>
@@ -212,85 +209,73 @@
                         <li>Publicités Ciblées</li>
                         <li>Gestion des Réseaux Sociaux</li>
                     </ul>
-                    <img src="https://www.dilepix.com/hubfs/maintenance.jpeg" alt="maintenance" class="img-fluid">
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const serviceBoxes = document.querySelectorAll('.service-box');
         const tabContents = document.querySelectorAll('.tab-content');
-
         function showTab(tabId) {
             tabContents.forEach(tab => tab.classList.remove('active'));
             serviceBoxes.forEach(box => box.classList.remove('active'));
-            
             const targetTab = document.getElementById(tabId);
             if (targetTab) {
                 targetTab.classList.add('active');
             }
-            
             const activeBox = document.querySelector(`.service-box[data-target="${tabId}"]`);
             if (activeBox) {
                 activeBox.classList.add('active');
             }
         }
-
         serviceBoxes.forEach(box => {
             box.addEventListener('click', function() {
                 const tabId = this.getAttribute('data-target');
                 showTab(tabId);
             });
         });
-
         // Show the first tab by default
         showTab('tab_1');
     });
 </script>
-
     <!-- About Section -->
     <section id="about" class="about section">
-
       <div class="content">
         <div class="container">
           <div class="row">
             <div class="col-lg-6 mb-4 mb-lg-0">
-              <img src="{% static 'assets/img/img_long_5.jpg' %}" alt="Image " class="img-fluid img-overlap" data-aos="zoom-out">
+              <img src="{% static 'assets/img/logggO.jpg' %}" alt="Image" class="img-fluid img-overlap" data-aos="zoom-out">
             </div>
             <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="content-subtitle text-white opacity-50">Why Choose Us</h3>
+              <h3 class="content-subtitle text-white opacity-50">Pourquoi Nous Choisir</h3>
               <h2 class="content-title mb-4">
-                More than <strong>1 year experience</strong> in agriculture
-                industry
+                Favoriser l'Agriculture avec <strong>Innovation et Technologie</strong>
               </h2>
               <p class="opacity-50">
-                Reprehenderit, odio laboriosam? Blanditiis quae ullam quasi illum
-                minima nostrum perspiciatis error consequatur sit nulla.
+                Nous sommes engagés à transformer l'agriculture grâce à des analyses basées sur les données, des technologies avancées et des pratiques durables répondant aux besoins des agriculteurs modernes.
               </p>
-
               <div class="row my-5">
                 <div class="col-lg-12 d-flex align-items-start mb-4">
-                  <i class="bi bi-cloud-rain me-4 display-6"></i>
+                  <i class="bi bi-graph-up-arrow me-4 display-6"></i>
                   <div>
-                    <h4 class="m-0 h5 text-white">Plants needs rain</h4>
-                    <p class="text-white opacity-50">Lorem ipsum dolor sit amet.</p>
+                    <h4 class="m-0 h5 text-white">Décisions Basées sur les Données</h4>
+                    <p class="text-white opacity-50">Utiliser l'analyse de données pour aider les agriculteurs à prendre de meilleures décisions.</p>
                   </div>
                 </div>
                 <div class="col-lg-12 d-flex align-items-start mb-4">
                   <i class="bi bi-heart me-4 display-6"></i>
                   <div>
-                    <h4 class="m-0 h5 text-white">Love organic foods</h4>
-                    <p class="text-white opacity-50">Lorem ipsum dolor sit amet.</p>
+                    <h4 class="m-0 h5 text-white">Agriculture Durable</h4>
+                    <p class="text-white opacity-50">Promouvoir des pratiques écologiques pour un avenir plus vert.</p>
                   </div>
                 </div>
                 <div class="col-lg-12 d-flex align-items-start">
-                  <i class="bi bi-shop me-4 display-6"></i>
+                  <i class="bi bi-cpu me-4 display-6"></i>
                   <div>
-                    <h4 class="m-0 h5 text-white">Sell vegies</h4>
-                    <p class="text-white opacity-50">Lorem ipsum dolor sit amet.</p>
+                    <h4 class="m-0 h5 text-white">Solutions AgTech Innovantes</h4>
+                    <p class="text-white opacity-50">Fournir des technologies de pointe pour une agriculture efficace.</p>
                   </div>
                 </div>
               </div>
@@ -298,178 +283,165 @@
           </div>
         </div>
       </div>
-    </section><!-- /About Section -->
-
-    <!-- About 3 Section -->
-    <section id="about-3" class="about-3 section">
-
-      <div class="container">
-        <div class="row gy-4 justify-content-between align-items-center">
-          <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
-            <img src="{% static 'assets/img/img_sq_1.jpg' %}" alt="Image" class="img-fluid">
-            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn">
-              <span class="play"><i class="bi bi-play-fill"></i></span>
-            </a>
-          </div>
-          <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="content-title mb-4">Plants Make Life Better</h2>
-            <p class="mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              necessitatibus placeat, atque qui voluptatem velit explicabo vitae
-              repellendus architecto provident nisi ullam minus asperiores commodi!
-              Tenetur, repellat aliquam nihil illo.
-            </p>
-            <ul class="list-unstyled list-check">
-              <li>Lorem ipsum dolor sit amet</li>
-              <li>Velit explicabo vitae repellendu</li>
-              <li>Repellat aliquam nihil illo</li>
-            </ul>
-
-            <p><a href="#" class="btn-cta">Get in touch</a></p>
-          </div>
-        </div>
+    </section>
+    
+    <!-- About Section pour AgTech Startup -->
+<section id="about-3" class="about-3 section">
+  <div class="container">
+    <div class="row gy-4 justify-content-between align-items-center">
+      <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
+        <img src="{% static 'assets/img/robot.jpg' %}" alt="Image" class="img-fluid">
+        <a href="{% static 'assets/img/bangri_all.mp4' %}" class="glightbox pulsating-play-btn">
+          <span class="play"><i class="bi bi-play-fill"></i></span>
+        </a>
       </div>
-    </section><!-- /About 3 Section -->
+      <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="content-title mb-4">Améliorer l'Agriculture avec les Données</h2>
+        <p class="mb-4">
+          Notre startup transforme l'agriculture grâce à une approche axée sur les données, aidant les agriculteurs à optimiser les rendements et à utiliser efficacement les ressources. Nous croyons que la technologie peut révolutionner la gestion agricole, en rendant les cultures plus productives et durables.
+        </p>
+        <ul class="list-unstyled list-check">
+          <li>Analyse de données pour des décisions optimisées</li>
+          <li>Prédiction de rendements précis grâce à l'IA</li>
+          <li>Approche durable et respectueuse de l'environnement</li>
+        </ul>
+        <p><a href="{% url 'contact_view' %}" class="btn-cta">Nous contacter</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /About Section pour AgTech Startup -->
 
-    <!-- Services 2 Section -->
-    <section id="services-2" class="services-2 section dark-background">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur</p>
-      </div><!-- End Section Title -->
+   <!-- Services 2 Section -->
+<section id="services-2" class="services-2 section dark-background">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Nos Services</h2>
+    <p>Solutions innovantes pour une agriculture performante et durable</p>
+  </div><!-- End Section Title -->
 
-      <div class="services-carousel-wrap">
-        <div class="container">
-          <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 2000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                },
-                "navigation": {
-                  "nextEl": ".js-custom-next",
-                  "prevEl": ".js-custom-prev"
-                },
-                "breakpoints": {
-                  "320": {
-                    "slidesPerView": 1,
-                    "spaceBetween": 40
-                  },
-                  "1200": {
-                    "slidesPerView": 3,
-                    "spaceBetween": 40
-                  }
-                }
+  <div class="services-carousel-wrap">
+    <div class="container">
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 2000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "navigation": {
+              "nextEl": ".js-custom-next",
+              "prevEl": ".js-custom-prev"
+            },
+            "breakpoints": {
+              "320": {
+                "slidesPerView": 1,
+                "spaceBetween": 40
+              },
+              "1200": {
+                "slidesPerView": 3,
+                "spaceBetween": 40
               }
-            </script>
-            <button class="navigation-prev js-custom-prev">
-              <i class="bi bi-arrow-left-short"></i>
-            </button>
-            <button class="navigation-next js-custom-next">
-              <i class="bi bi-arrow-right-short"></i>
-            </button>
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <div class="service-item-contents">
-                    <a href="#">
-                      <span class="service-item-category">We do</span>
-                      <h2 class="service-item-title">Planting</h2>
-                    </a>
-                  </div>
-                  <img src="{% static 'assets/img/img_sq_1.jpg' %}" alt="Image" class="img-fluid">
-                </div>
+            }
+          }
+        </script>
+        <button class="navigation-prev js-custom-prev">
+          <i class="bi bi-arrow-left-short"></i>
+        </button>
+        <button class="navigation-next js-custom-next">
+          <i class="bi bi-arrow-right-short"></i>
+        </button>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="service-item">
+              <div class="service-item-contents">
+                <a href="#">
+                  <span class="service-item-category">Collecte</span>
+                  <h2 class="service-item-title">Données Agricoles</h2>
+                </a>
               </div>
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <div class="service-item-contents">
-                    <a href="#">
-                      <span class="service-item-category">Nous</span>
-                      <h2 class="service-item-title">Développons</h2>
-                    </a>
-                  </div>
-                  <img src="{% static 'assets/img/img_sq_3.jpg' %}" alt="Image" class="img-fluid">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <div class="service-item-contents">
-                    <a href="#">
-                      <span class="service-item-category">Nous</span>
-                      <h2 class="service-item-title">Analysons</h2>
-                    </a>
-                  </div>
-                  <img src="{% static 'assets/img/img_sq_8.jpg' %}" alt="Image" class="img-fluid">
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <div class="service-item-contents">
-                    <a href="#">
-                      <span class="service-item-category">Nous</span>
-                      <h2 class="service-item-title">Conseillons</h2>
-                    </a>
-                  </div>
-                  <img src="{% static 'assets/img/img_sq_4.jpg' %}" alt="Image" class="img-fluid">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <div class="service-item-contents">
-                    <a href="#">
-                      <span class="service-item-category">Nous</span>
-                      <h2 class="service-item-title">Commercialisons</h2>
-                    </a>
-                  </div>
-                  <img src="{% static 'assets/img/img_sq_5.jpg' %}" alt="Image" class="img-fluid">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <div class="service-item-contents">
-                    <a href="#">
-                      <span class="service-item-category">Nous</span>
-                      <h2 class="service-item-title">Mowing</h2>
-                    </a>
-                  </div>
-                  <img src="{% static 'assets/img/img_sq_6.jpg' %}" alt="Image" class="img-fluid">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <div class="service-item-contents">
-                    <a href="#">
-                      <span class="service-item-category">Nous</span>
-                      <h2 class="service-item-title">Seeding Plants</h2>
-                    </a>
-                  </div>
-                  <img src="{% static 'assets/img/img_sq_8.jpg' %}" alt="Image" class="img-fluid">
-                </div>
-              </div>
+              <img src="{% static 'assets/img/im_sq_11.jpg' %}" alt="Image" class="img-fluid">
             </div>
-            <div class="swiper-pagination"></div>
           </div>
+          <div class="swiper-slide">
+            <div class="service-item">
+              <div class="service-item-contents">
+                <a href="#">
+                  <span class="service-item-category">Développement</span>
+                  <h2 class="service-item-title">Solutions Numériques</h2>
+                </a>
+              </div>
+              <img src="{% static 'assets/img/im_sq_22.jpg' %}" alt="Image" class="img-fluid">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service-item">
+              <div class="service-item-contents">
+                <a href="#">
+                  <span class="service-item-category">Analyse</span>
+                  <h2 class="service-item-title">Modèles Prédictifs</h2>
+                </a>
+              </div>
+              <img src="{% static 'assets/img/im_sq_33.jpg' %}" alt="Image" class="img-fluid">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service-item">
+              <div class="service-item-contents">
+                <a href="#">
+                  <span class="service-item-category">Conseil</span>
+                  <h2 class="service-item-title">Stratégie Agronomique</h2>
+                </a>
+              </div>
+              <img src="{% static 'assets/img/im_sq_44.jpg' %}" alt="Image" class="img-fluid">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service-item">
+              <div class="service-item-contents">
+                <a href="#">
+                  <span class="service-item-category">Commercialisation</span>
+                  <h2 class="service-item-title">Produits Innovants</h2>
+                </a>
+              </div>
+              <img src="{% static 'assets/img/im_sq_55.jpg' %}" alt="Image" class="img-fluid">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service-item">
+              <div class="service-item-contents">
+                <a href="#">
+                  <span class="service-item-category">Support</span>
+                  <h2 class="service-item-title">Maintenance et Suivi</h2>
+                </a>
+              </div>
+              <img src="{% static 'assets/img/im_sq_66.jpg' %}" alt="Image" class="img-fluid">
+            </div>
+          </div>
+          
         </div>
+        <div class="swiper-pagination"></div>
       </div>
-    </section><!-- /Services 2 Section -->
+    </div>
+  </div>
+</section><!-- /Services 2 Section -->
+
 
     <!-- Recent Posts Section -->
     <section id="recent-posts" class="recent-posts section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Recent Posts</h2>
-        <p>Necessitatibus eius consequatur</p>
+        <h2>Articles Récents</h2>
+        <p>Besoins et solutions adaptées</p>
+        
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -482,7 +454,9 @@
                 <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
         
                     <div class="post-img position-relative overflow-hidden">
-                      <img src="{% static 'assets/img/blog/blog-1.jpg' %}" class="img-fluid" alt="">
+                      {% if post.image %}
+                      <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid">
+                      {% endif %}                       
                       <span class="post-date">{{ post.published|date:"F d" }}</span>
                     </div>
         

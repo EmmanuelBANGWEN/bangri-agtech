@@ -1,0 +1,30 @@
+{% extends 'siteweb/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Mon Profil</h2>
+    <div class="profile-info">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur:</label>
+                <h4 type="text" id="last_name" name="last_name" class="form-control" >{{ user.username }}</h4>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <h4 type="text" id="last_name" name="last_name" class="form-control" >{{ user.email}}</h4>
+            </div>
+            <div class="form-group">
+                <label for="first_name">Prénom:</label>
+                <h4 type="text" id="last_name" name="last_name" class="form-control" >{{ user.first_name }}</h4>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Nom:</label>
+                <h4 type="text" id="last_name" name="last_name" class="form-control" >{{ user.last_name }}</h4>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

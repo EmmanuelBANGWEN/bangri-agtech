@@ -3,7 +3,6 @@
 {% block content %}
 <div class="contained px-5 py-5 "> 
     <div class="container d-flex justify-content-center align-items-center vh-10">
-
     <div class="card p-4 shadow-lg" style="width: 100%; max-width: 500px; border-radius: 20px;">
         <h3 class="text-center mb-4">Create Your Account</h3>
         <form id="contactForm" method="POST" action=".">
@@ -21,7 +20,6 @@
                 {{ user_form.username }}
                 <label class="form-label" for="{{ user_form.username.id_for_label }}"></label>
             </div>
-
             <!-- First Name input -->
             <div class="form-outline mb-3">
                 {{ user_form.first_name }}
@@ -53,7 +51,7 @@
             </div>
 
             <!-- Checkbox -->
-            <div class="form-check d-flex justify-content-center mb-4">
+            <div class="form-check d-flex justify-content mb-4">
                 <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked />
                 <label class="form-check-label" for="registerCheck">
                     I agree to the terms and conditions

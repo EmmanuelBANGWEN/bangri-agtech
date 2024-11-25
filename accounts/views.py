@@ -50,3 +50,9 @@ def register_view(request):
         return render(request, 'registration/register.html', {'user_form': user_form})
 
 
+
+def profile_view(request):
+    return render(request, 'profile/profile.html')
+
+# def settings_view(request):
+#     return render(request, 'profile/settings.html')

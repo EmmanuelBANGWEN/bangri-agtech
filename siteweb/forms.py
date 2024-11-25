@@ -46,3 +46,16 @@ class ContactForm(forms.Form):
     subject = forms.CharField(max_length=255)
     message = forms.CharField(widget=forms.Textarea, label="Message")
 
+class EmailPostForm(forms.Form):
+    name = forms.CharField(max_length=20)
+    email = forms.EmailField()
+    to = forms.EmailField()
+    comments = forms.CharField(max_length=500, widget=forms.Textarea)
+
+from django import forms
+
+class PostShareForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    to = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)

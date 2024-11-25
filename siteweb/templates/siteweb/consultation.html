@@ -2,6 +2,18 @@
 {% load static %}
 
 {% block content %}
+ <!-- Page Title -->
+ <div class="page-title dark-background" data-aos="fade" style="background-image: url('{% static "assets/img/page-title-bg.webp" %}');">
+    <div class="container position-relative">
+      <h1>Consultation</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="{% url 'home_view' %}">Home</a></li>
+          <li class="current">Consultation</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
 <section id="consultation" class="consultation-section py-5">
     <div class="container">
         <h2 class="text-center mb-4">Consultation Personnalisée</h2>
@@ -12,7 +24,7 @@
                 <p>Chez Bangri, nous accompagnons nos clients dans leurs projets à travers des consultations personnalisées. Nos services incluent des conseils stratégiques, le choix des technologies adaptées et l'analyse des performances, afin d'améliorer vos rendements et d'assurer la pérennité de vos activités.</p>
             </div>
             <div class="col-md-4">
-                <img src="{% static 'assets/img/consulting-team.jpg' %}" alt="Consultation Team" class="img-fluid">
+                <img src="{% static 'assets/img/pexels-pragyanbezbo-4199762.jpg' %}" alt="Consultation Team" class="img-fluid">
             </div>
         </div>
         
@@ -31,8 +43,8 @@
             <div class="col-md-4">
                 <h3>Études de Cas</h3>
                 <blockquote>
-                    <p>"Grâce à la consultation Bangri, nous avons optimisé nos cultures et augmenté nos rendements de 25% en seulement un an."</p>
-                    <footer>- Exploitant agricole</footer>
+                    <p>"Grâce à la consultation Bangri, vous pouvez optimiser vos exploitations et augmenter vos rendements de 15% en seulement un an."</p>
+                    <!-- <footer>- Exploitant agricole</footer> -->
                 </blockquote>
             </div>
             
@@ -59,7 +71,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="consultation_type" class="form-label">Type de Consultation</label>
-                        <select class="form-control" id="consultation_type" name="consultation_type" required>
+                        <select class="form-control w-100" id="consultation_type" name="consultation_type" required>
                             <option value="Stratégies Agricoles">Stratégies</option>
                             <option value="Choix Technologiques">Choix Technologiques</option>
                             <option value="Analyse de Performance">Analyse de Performance</option>
@@ -78,7 +90,7 @@
         <div class="row mt-5">
             <div class="col-md-6">
                 <h3>Notre Processus de Consultation</h3>
-                <img src="{% static 'assets/img/consultation-process.png' %}" alt="Processus de Consultation" class="img-fluid">
+                <!-- <img src="{% static 'assets/img/consultation-process.png' %}" alt="Processus de Consultation" class="img-fluid"> -->
                 <ol class="process-steps mt-4">
                     <li><strong>Étape 1 :</strong> Analyse de vos besoins spécifiques.</li>
                     <li><strong>Étape 2 :</strong> Recommandations personnalisées basées sur nos expertises.</li>
@@ -87,13 +99,13 @@
             </div>
 
             <!-- Consultation Videos -->
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <h3>Vidéo Explicative sur nos Consultations</h3>
                 <video controls width="100%">
                     <source src="{% static 'assets/videos/consultation-tutorial.mp4' %}" type="video/mp4">
                     Votre navigateur ne supporte pas la vidéo.
                 </video>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
