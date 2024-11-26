@@ -15,6 +15,8 @@ from django.contrib.auth.models import Group
 from django.core.mail import EmailMessage
 from django.contrib.auth.decorators import login_required
 
+from django.contrib.auth.decorators import login_required
+
 
 
 
@@ -51,6 +53,7 @@ def tag_view(request, tag_slug):
         'posts': posts,
         'tag' : tag,
     })
+
 
 def blog_details_view(request, year: int, month: int, day: int, slug: str, category=None, tag_slug=None):
     post = get_object_or_404(Post, slug=slug, statut='published', published__year=year, 
@@ -117,6 +120,7 @@ def blog_details_view(request, year: int, month: int, day: int, slug: str, categ
 
 
 @login_required
+@login_required
 def blog_view(request):
     posts = Post.published_posts.all()
     posts = posts.order_by('-published')
@@ -140,9 +144,11 @@ def contact_view(request):
     return render(request, 'siteweb/contact.html')
 
 @login_required
+@login_required
 def services_view(request):
     return render(request, 'siteweb/services.html')
 
+@login_required
 @login_required
 def blog_details(request):
     return render(request, 'siteweb/services.html')
@@ -151,6 +157,7 @@ def blog_details(request):
 # def testimonials_view(request):
 #     return render(request, 'siteweb/testimonials.html')
 
+@login_required
 @login_required
 def post_search(request):
     query = None
@@ -245,6 +252,7 @@ def developpement_logiciel(request):
 
 def analyse_donnees(request):
     return render(request, 'siteweb/analyse_donnees.html')
+
 
 
 def consultation(request):
@@ -467,6 +475,7 @@ def faq_view(request):
     return render(request, 'siteweb/faq.html', {'faq_items': faq_items})
 
 @login_required
+@login_required
 def post_share(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     sent = False
@@ -497,16 +506,20 @@ def post_share(request, post_id):
 
     return render(request, 'siteweb/share.html', {'post': post, 'form': form, 'send': sent, 'messages': messages.get_messages(request)})
 
+@login_required
 def liste_ebooks(request):
     ebooks = Ebook.objects.all()
     return render(request, 'ebooks/liste_ebooks.html', {'ebooks': ebooks})
 
+@login_required
 def detail_ebook(request, ebook_id):
     ebook = get_object_or_404(Ebook, id=ebook_id)
     return render(request, 'ebooks/detail_ebook.html', {'ebook': ebook})
 
+@login_required
 def redirection_whatsapp(request, ebook_id):
     # Optionnel : récupérer les informations de l'ebook si besoin
     ebook = get_object_or_404(Ebook, id=ebook_id)
     return render(request, 'ebooks/redirect_whatsapp.html', {'ebook': ebook})
+
 
