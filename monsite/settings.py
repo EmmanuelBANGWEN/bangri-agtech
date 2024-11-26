@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from decouple import Config, ConfigParser, config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,7 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-y$xq3tg(-pqfgp7im-62lh1*-i@kt87e%pwhe6)w3^u=kz5^xe'
+
+# SECRET_KEY = 'django-insecure-y$xq3tg(-pqfgp7im-62lh1*-i@kt87e%pwhe6)w3^u=kz5^xe'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
@@ -83,12 +86,16 @@ WSGI_APPLICATION = 'monsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# import dj_database_url
+import dj_database_url
 
 # DATABASES = {
 #     'default': dj_database_url.config(default='sqlite:///db.sqlite3')
 # }
 
+
+DATABASES = {
+    'default': dj_database_url.parse(config('DATABASE_URL'))
+}
 
 DATABASES = {
     'default': {
