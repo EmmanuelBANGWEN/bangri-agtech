@@ -497,17 +497,14 @@ def post_share(request, post_id):
 
     return render(request, 'siteweb/share.html', {'post': post, 'form': form, 'send': sent, 'messages': messages.get_messages(request)})
 
-@login_required
 def liste_ebooks(request):
     ebooks = Ebook.objects.all()
     return render(request, 'ebooks/liste_ebooks.html', {'ebooks': ebooks})
 
-@login_required
 def detail_ebook(request, ebook_id):
     ebook = get_object_or_404(Ebook, id=ebook_id)
     return render(request, 'ebooks/detail_ebook.html', {'ebook': ebook})
 
-@login_required
 def redirection_whatsapp(request, ebook_id):
     # Optionnel : récupérer les informations de l'ebook si besoin
     ebook = get_object_or_404(Ebook, id=ebook_id)

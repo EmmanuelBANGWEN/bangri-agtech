@@ -220,4 +220,3 @@ ORANGE_MONEY_API_KEY = 'votre_clé_API'
 ORANGE_MONEY_SECRET_KEY = 'votre_clé_secrète'
 ORANGE_MONEY_CALLBACK_URL = 'https://votre-domaine.com/callback/'
 ORANGE_MONEY_MERCHANT_ACCOUNT = 'votre_compte_merchant'
-
