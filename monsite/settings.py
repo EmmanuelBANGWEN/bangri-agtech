@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from decouple import Config, ConfigParser, config
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -97,16 +97,16 @@ DATABASES = {
     'default': dj_database_url.parse(config('DATABASE_URL'))
 }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'bangri',
-        'USER':'trebmal',
-        'PASSWORD':'manulove',
-        'HOST':'localhost',
-        'PORT':'4444',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME':'bangri',
+#         'USER':'trebmal',
+#         'PASSWORD':'manulove',
+#         'HOST':'localhost',
+#         'PORT':'4444',
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -153,9 +153,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, '..', 'static'),  # Niveau supérieur
 ]
-
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

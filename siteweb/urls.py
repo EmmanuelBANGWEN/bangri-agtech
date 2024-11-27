@@ -13,7 +13,7 @@ urlpatterns = [
     path('blog_details/<int:year>/<int:month>/<int:day>/<slug>/', views.blog_details_view, 
                                                     name='blog_details_view'),
     path('search/', views.post_search, name='post_search'),
-    path('/', views.subscribe_view, name='subscribe_view'),
+    path('', views.subscribe_view, name='subscribe_view'),
     path('send_newsletter/', views.send_newsletter_view, name='send_newsletter_view'),
     path('contact/', views.contact, name='contact'),
     path('terms-of-service/', views.terms_of_service, name='terms_of_service'),
