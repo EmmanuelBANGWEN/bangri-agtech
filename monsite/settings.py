@@ -1,6 +1,6 @@
+
 import os
 from pathlib import Path
-from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,9 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
-# SECRET_KEY = 'django-insecure-y$xq3tg(-pqfgp7im-62lh1*-i@kt87e%pwhe6)w3^u=kz5^xe'
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-y$xq3tg(-pqfgp7im-62lh1*-i@kt87e%pwhe6)w3^u=kz5^xe'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
@@ -44,7 +42,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -87,39 +84,18 @@ WSGI_APPLICATION = 'monsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-import dj_database_url
 
-# DATABASES = {
-#     'default': dj_database_url.config(default='sqlite:///db.sqlite3')
-# }
-
-
-# DATABASES = {
-#     'default': dj_database_url.parse(config('DATABASE_URL'))
-# }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME':'bangri',
-#         'USER':'trebmal',
-#         'PASSWORD':'manulove',
-#         'HOST':'localhost',
-#         'PORT':'4444',
-#     }
-# }
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
+        'NAME':'bangri',
+        'USER':'trebmal',
+        'PASSWORD':'manulove',
+        'HOST':'localhost',
+        'PORT':'4444',
     }
 }
-
 
 # DATABASES = {
 #     'default': {
@@ -164,22 +140,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
-
-# Chemin absolu vers le répertoire de destination pour les fichiers statiques collectés
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '..', 'static'),  # Niveau supérieur
+    os.path.join(BASE_DIR, 'static'),
 ]
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-
+# Chemin absolu vers le répertoire de destination pour les fichiers statiques collectés
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 
@@ -220,3 +191,4 @@ ORANGE_MONEY_API_KEY = 'votre_clé_API'
 ORANGE_MONEY_SECRET_KEY = 'votre_clé_secrète'
 ORANGE_MONEY_CALLBACK_URL = 'https://votre-domaine.com/callback/'
 ORANGE_MONEY_MERCHANT_ACCOUNT = 'votre_compte_merchant'
+
