@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,12 +10,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-y$xq3tg(-pqfgp7im-62lh1*-i@kt87e%pwhe6)w3^u=kz5^xe'
+
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-
-# ALLOWED_HOSTS = []
 
 DEBUG = True
 ALLOWED_HOSTS = ['*']
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -83,25 +83,26 @@ WSGI_APPLICATION = 'monsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-
+import dj_database_url
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'bangri',
-        'USER':'trebmal',
-        'PASSWORD':'manulove',
-        'HOST':'localhost',
-        'PORT':'4444',
-    }
+    'default': dj_database_url.parse(config('DATABASE_URL'))
 }
+
+
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PASSWORD'),
+#         'HOST': config('DB_HOST'),
+#         'PORT': config('DB_PORT'),
 #     }
 # }
+
+
 
 
 
@@ -139,17 +140,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+# Chemin absolu vers le répertoire de destination pour les fichiers statiques collectés
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, '..', 'static'),  # Niveau supérieur
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Chemin absolu vers le répertoire de destination pour les fichiers statiques collectés
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 
 
@@ -167,7 +173,6 @@ EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'bikoyemmanuel531@gmail.com'
 EMAIL_HOST_PASSWORD = 'ywvm uols wmhe jymi'
-#DEFAULT_FROM_EMAIL = 'bangwenbikoy@gmail.com'
 
 # Configuration Celery
 CELERY_BROKER_URL = 'redis://localhost:6379/0'  # URL de connexion à Redis
@@ -190,4 +195,3 @@ ORANGE_MONEY_API_KEY = 'votre_clé_API'
 ORANGE_MONEY_SECRET_KEY = 'votre_clé_secrète'
 ORANGE_MONEY_CALLBACK_URL = 'https://votre-domaine.com/callback/'
 ORANGE_MONEY_MERCHANT_ACCOUNT = 'votre_compte_merchant'
-
