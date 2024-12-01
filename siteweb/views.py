@@ -306,7 +306,7 @@ def faq_view(request):
         ("Quels types de cultures sont couverts par Bangri ?", "Nous travaillons avec une variété de cultures, y compris les céréales, les fruits et légumes."),
         ("Comment puis-je m'inscrire à vos services ?", "Pour vous inscrire, visitez notre site web et remplissez le formulaire d'inscription."),
         ("Proposez-vous des essais gratuits ?", "Oui, nous offrons des essais gratuits pour permettre aux agriculteurs de tester nos solutions."),
-        ("Comment puis-je contacter le support client ?", "Vous pouvez nous contacter via notre page de contact ou par email à contact@bangri.com."),
+        ("Comment puis-je contacter le support client ?", "Vous pouvez nous contacter via notre page de contact ou par email à bikoyemmanuel531@gmail.com."),
         ("Y a-t-il des frais d'abonnement ?", "Nous proposons différents plans d'abonnement adaptés aux besoins des agriculteurs."),
         ("Comment mes données sont-elles protégées ?", "Nous prenons la sécurité des données très au sérieux et utilisons des protocoles de sécurité avancés."),
         ("Puis-je annuler mon abonnement à tout moment ?", "Oui, vous pouvez annuler votre abonnement à tout moment sans frais supplémentaires."),
