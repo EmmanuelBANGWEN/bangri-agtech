@@ -119,8 +119,7 @@ def blog_details_view(request, year: int, month: int, day: int, slug: str, categ
                                                     })
 
 
-@login_required
-@login_required
+# @login_required
 def blog_view(request):
     posts = Post.published_posts.all()
     posts = posts.order_by('-published')
@@ -143,22 +142,15 @@ def blog_view(request):
 def contact_view(request):
     return render(request, 'siteweb/contact.html')
 
-@login_required
-@login_required
+
 def services_view(request):
     return render(request, 'siteweb/services.html')
 
-@login_required
-@login_required
 def blog_details(request):
     return render(request, 'siteweb/services.html')
 
 
-# def testimonials_view(request):
-#     return render(request, 'siteweb/testimonials.html')
 
-@login_required
-@login_required
 def post_search(request):
     query = None
     results = []
@@ -183,6 +175,7 @@ def post_search(request):
         'results': results,
     })
 
+@login_required
 def subscribe_view(request):
     if request.method == 'POST':
         form = SubscriptionForm(request.POST)
@@ -195,6 +188,7 @@ def subscribe_view(request):
     # return render(request, 'siteweb/subscribe.html', {'form': form})
     return render(request, 'siteweb/index.html')
 
+@login_required
 def send_newsletter(subject, message):
     subscribers = Subscriber.objects.values_list('email', flat=True)
     # send_mail(subject, message, 'bikoyemmanuel531@gmail.com', list(subscribers))
@@ -203,6 +197,7 @@ def send_newsletter(subject, message):
     email.content_subtype = "html"  # Important pour envoyer l'email en HTML
     email.send()
 
+@login_required
 def send_newsletter_view(request):
     if request.method == 'POST':
         subject = request.POST.get('subject')
@@ -268,7 +263,7 @@ def contact(request):
 def assistance(request):
     return render(request, 'siteweb/assistance.html')
 
-
+@login_required
 def consultation_view(request):
     if request.method == 'POST':
         if request.user.is_authenticated:

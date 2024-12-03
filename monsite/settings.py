@@ -16,7 +16,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = True
-ALLOWED_HOSTS = ['bangri-agtech.onrender.com','bangri-agritech.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['bangri-agtech.onrender.com','bangri-agritech.onrender.com', 
+                 '127.0.0.1', 'localhost', 'bangri-agtech.com',
+                 'bangri.onrender.com','bangri.com', 'bangri-agritech.com']
 
 
 
