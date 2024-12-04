@@ -5,7 +5,7 @@ from django.utils.text import slugify
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
-from cloudinary import CloudinaryImage
+from cloudinary.models import CloudinaryField
 
 
 
@@ -36,7 +36,7 @@ class Post(models.Model):
     published = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='posted',  )
-    image = CloudinaryImage('image')
+    image = CloudinaryField('image')
     objects = models.Manager() #default manager
     published_posts = PublishedManager() #custom manager
     tags = TaggableManager()
@@ -91,7 +91,7 @@ class Ebook(models.Model):
     description = models.TextField()
     prix = models.DecimalField(max_digits=6, decimal_places=2)
     fichier = models.FileField(upload_to='ebooks/')
-    couverture = CloudinaryImage('couverture')
+    couverture = CloudinaryField('couverture')
     date_publication = models.DateField(auto_now_add=True)
 
     def __str__(self):
