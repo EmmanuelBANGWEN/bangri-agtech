@@ -108,7 +108,9 @@ DATABASES = {
 # }
 
 
-
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 CLOUDINARY_STORAGE = {
@@ -169,8 +171,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_ROOT = None
+# MEDIA_ROOT = BASE_DIR / 'media'
+# MEDIA_ROOT = None
 
 
 
