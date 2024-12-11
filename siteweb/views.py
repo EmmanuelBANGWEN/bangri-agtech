@@ -165,9 +165,10 @@ def post_search(request):
             # results = Post.published_posts.annotate(
             #     search=vector_search, rank=SearchRank(vector_search,query_search)
             # ).filter(rank__gte=0.3).order_by('rank')
-            results = Post.published_posts.annotate(
-                                                    similarity=TrigramSimilarity("title", query),
-                                                    ).filter(similarity__gt=0.1).order_by("-similarity")
+            # results = Post.published_posts.annotate(
+            #                                         similarity=TrigramSimilarity("title", query),
+            #                                         ).filter(similarity__gt=0.1).order_by("-similarity")
+            results = Post.objects.filter(title__icontains=query)
 
     return render(request, 'siteweb/search.html', {
         'search_form': search_form,
