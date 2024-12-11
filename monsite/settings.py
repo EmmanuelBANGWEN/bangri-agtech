@@ -215,7 +215,6 @@ CELERY_BEAT_SCHEDULE = {
     },
 }
 
-# settings.py
 ORANGE_MONEY_API_KEY = 'votre_clé_API'
 ORANGE_MONEY_SECRET_KEY = 'votre_clé_secrète'
 ORANGE_MONEY_CALLBACK_URL = 'https://votre-domaine.com/callback/'
