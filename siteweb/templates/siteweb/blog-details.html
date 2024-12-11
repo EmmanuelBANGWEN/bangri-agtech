@@ -139,7 +139,7 @@
             <div class="d-flex align-items-center w-100">
                 <div class="author-image">
                     
-                    <img src="{% static 'assets/img/image.png' %}" alt="Default photo" class="rounded-circle"> <!-- Image par défaut si l'utilisateur n'a pas de photo -->
+                    <img src="{% static 'assets/img/Emmanuel_Bangwen.png' %}" alt="Default photo" class="rounded-circle"> <!-- Image par défaut -->
                 </div>
                 <div class="author-info ml-0">
                     <h4>{{ post.author }}</h4>
@@ -164,7 +164,8 @@
         </div>
     </div>
 
-    <style>
+<style>
+
 
 .author-image img {
     width: 100px; /* Ajuste la taille selon tes besoins */
@@ -173,6 +174,7 @@
     object-fit: cover; /* Pour s'assurer que l'image est bien cadrée dans le cercle */
 
 }
+
 .comment-img img {
   width: 20px; /* Ajuste la taille selon tes besoins */
     height: 50px;
